@@ -1,0 +1,14 @@
+<h1>
+  <ul>
+    <li *ngFor="let citi of cities; let i = index">
+      <span *ngIf="citi !== 'Mysore'">{{citi}}</span>
+      <button (click)="removeCiti(i)">X</button>
+    </li>
+  </ul>
+  Enter city name: <input type="text" [(ngModel)]="newCiti"> 
+  <button (click)="addCiti()">
+    Add
+  </button>
+</h1>
+<hr>
+<app-todo></app-todo>
