@@ -26,6 +26,12 @@ export class TodoComponent implements OnInit {
       text: this.newTodoItem,
       completed: false
     });
+    this.newTodoItem = '';
+  }
+
+  delete(id) {
+    // alert("From Parent: " + id);
+    this.todoItems.splice(id, 1);
   }
 
 }

@@ -1,0 +1,33 @@
+<div class="container">
+  <br/>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Products List
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr align="center">
+            <th>#</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products; let i = index">
+            <td>{{i + 1}}</td>
+            <td>
+              <img [src]="p.imageUrl" width="50" height="50">
+            </td>
+            <td>{{p.productName}}</td>
+            <td>{{p.description}}</td>
+            <td>{{p.price | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

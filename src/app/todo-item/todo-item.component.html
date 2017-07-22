@@ -1,0 +1,3 @@
+<input type="checkbox" [(ngModel)]="todoInputItem.completed">
+<span class="todo-{{todoInputItem.completed}}">{{todoInputItem.text}}</span>
+<button (click)="delete()">X</button>
