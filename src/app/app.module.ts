@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { RemoveSpacesPipe } from './remove-spaces.pipe';
+
+import { ProductDataService } from './services/product-data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
     TodoItemComponent,
-    ProductListComponent
+    ProductListComponent,
+    RemoveSpacesPipe
   ],
   imports: [
     BrowserModule, FormsModule
   ],
-  providers: [],
+  providers: [ProductDataService],
   bootstrap: [ProductListComponent]
 })
 export class AppModule { }

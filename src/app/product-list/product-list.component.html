@@ -9,7 +9,12 @@
         <thead>
           <tr align="center">
             <th>#</th>
-            <th>Image</th>
+            <th>
+              <button (click)="toggleImages()"
+                class="btn btn-primary btn-lg">
+                {{showImages === true ? 'Hide' : 'Show'}} Images
+              </button>
+            </th>
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
@@ -19,15 +24,15 @@
           <tr *ngFor="let p of products; let i = index">
             <td>{{i + 1}}</td>
             <td>
-              <img [src]="p.imageUrl" width="50" height="50">
+              <img [src]="p.imageUrl" width="50" height="50" *ngIf="showImages">
             </td>
-            <td>{{p.productName}}</td>
-            <td>{{p.description}}</td>
-            <td>{{p.price | currency}}</td>
+            <td>{{p.productName | uppercase | lowercase}}</td>
+            <td>{{p.description | removeSpaces:false}}</td>
+            <td>{{p.price | number}}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-
+  <!-- <app-todo></app-todo> -->
 </div>
