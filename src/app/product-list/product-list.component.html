@@ -18,6 +18,7 @@
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -27,8 +28,16 @@
               <img [src]="p.imageUrl" width="50" height="50" *ngIf="showImages">
             </td>
             <td>{{p.productName | uppercase | lowercase}}</td>
-            <td>{{p.description | removeSpaces:false}}</td>
-            <td>{{p.price | number}}</td>
+            <td [ngClass]="{'goodPrice': p.price >= 15}">{{p.description | removeSpaces:false}}</td>
+            <td>
+              <span [style.color]="getColor(p.price)">{{p.price | number}}</span>
+            </td>
+            <td>
+              <span *ngIf="p.price > 10">Good</span>
+              <span *ngIf="p.price <= 10">Bad</span>
+
+              <span>{{ p.price >= 10 ? 'GOOD' : 'BAD'}}</span>
+            </td>
           </tr>
         </tbody>
       </table>

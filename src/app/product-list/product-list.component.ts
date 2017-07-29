@@ -25,4 +25,11 @@ export class ProductListComponent implements OnInit {
     this.showImages = !this.showImages;
   }
 
+  public getColor(p): string {
+    if(p > 10) {
+      return "green";
+    } else {
+      return "black";
+    }
+  }
 }

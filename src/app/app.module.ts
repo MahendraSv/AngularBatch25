@@ -9,6 +9,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { RemoveSpacesPipe } from './remove-spaces.pipe';
 
 import { ProductDataService } from './services/product-data.service';
+import { AccessTokenServiceService } from './services/access-token-service.service';
+
+import { appRouteModule } from './routes/app.routes';
 
 @NgModule({
   declarations: [
@@ -19,9 +22,9 @@ import { ProductDataService } from './services/product-data.service';
     RemoveSpacesPipe
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, appRouteModule
   ],
-  providers: [ProductDataService],
-  bootstrap: [ProductListComponent]
+  providers: [ProductDataService, AccessTokenServiceService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

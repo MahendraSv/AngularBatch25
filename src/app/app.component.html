@@ -1,4 +1,31 @@
-<h1>
+<div class="container">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Batch 25</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a [routerLink]="['/todos']">Todos</a></li>
+        <li><a [routerLink]="['/products']">Products</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div 
+  [ngStyle]="{'font-weight': 'bold'}">
+    <span [style.background-color]="color" [style.font-size]="size">style using ngStyle</span>
+  </div>
+  <input [(ngModel)]="color" />
+  <button (click)="fontInc()">+</button>
+  <button (click)="size = size - 1">-</button>
+  <router-outlet></router-outlet>
+</div>
+
+
+
+
+
+<!-- <h1>
   <ul>
     <li *ngFor="let citi of cities; let i = index">
       <span *ngIf="citi !== 'Mysore'">{{citi}}</span>
@@ -11,4 +38,4 @@
   </button>
 </h1>
 <hr>
-<app-todo></app-todo>
+ <app-todo></app-todo>  -->
