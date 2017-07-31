@@ -12,6 +12,8 @@ import { ProductDataService } from './services/product-data.service';
 import { AccessTokenServiceService } from './services/access-token-service.service';
 
 import { appRouteModule } from './routes/app.routes';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductNewComponent } from './product-new/product-new.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { appRouteModule } from './routes/app.routes';
     TodoComponent,
     TodoItemComponent,
     ProductListComponent,
-    RemoveSpacesPipe
+    RemoveSpacesPipe,
+    ProductDetailsComponent,
+    ProductNewComponent
   ],
   imports: [
     BrowserModule, FormsModule, appRouteModule

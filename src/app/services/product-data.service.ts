@@ -3,10 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ProductDataService {
 
-  constructor() { }
-
-  public getData(): any[] {
-    return [
+  availableProducts: any[] = [
       {
       "productId": 1,
       "productName": "Leaf Rake",
@@ -68,6 +65,27 @@ export class ProductDataService {
       "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
   ];
+
+  constructor() { }
+
+  public getData(): any[] {
+    return this.availableProducts;
+  }
+
+  public getDataById(id: number): any {
+    let foundProduct: {};
+    let products = this.getData();
+    for(var i = 0; i < products.length; i++) {
+      if(products[i].productId == id) {
+        foundProduct = products[i];
+        break;
+      }
+    }
+    return foundProduct;
+  }
+
+  public addProduct(newProduct: any): void {
+    this.availableProducts.push(newProduct);
   }
 
 }

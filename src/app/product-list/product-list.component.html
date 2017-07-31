@@ -5,6 +5,9 @@
       Products List
     </div>
     <div class="panel-body">
+      <div class="pull-right" style="margin-bottom:10px;">
+        <a [routerLink]="['/productNew']" class="btn btn-success">Add Product</a>
+      </div>
       <table class="table table-bordered">
         <thead>
           <tr align="center">
@@ -27,7 +30,9 @@
             <td>
               <img [src]="p.imageUrl" width="50" height="50" *ngIf="showImages">
             </td>
-            <td>{{p.productName | uppercase | lowercase}}</td>
+            <td>
+              <a [routerLink]="['/productDetails/' + p.productId]">{{p.productName}}</a>
+            </td>
             <td [ngClass]="{'goodPrice': p.price >= 15}">{{p.description | removeSpaces:false}}</td>
             <td>
               <span [style.color]="getColor(p.price)">{{p.price | number}}</span>
